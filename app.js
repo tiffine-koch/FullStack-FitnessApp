@@ -7,9 +7,11 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
+var mongoUrl = process.env.MONGOLAB_URI || 'mongodb://localhost/herokutest'
 var mongoose = require('mongoose');
-
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/herokutest')
+mongoose.connect(mongoUrl, function(err) {
+  console.log(err || `Connected to MongoDB: ${mongoUrl}`);
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
