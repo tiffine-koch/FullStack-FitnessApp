@@ -17,7 +17,7 @@ function loginUser(e) {
 
   $.post('/users/login', {email: email, password: password})
   .success(function(data) {
-    console.log(data);
+    location.href = '/';
   })
   .fail(function(err) {
     alert('Error.  Check console.');
