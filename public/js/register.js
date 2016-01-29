@@ -23,10 +23,11 @@ function registerUser(e) {
   }
 
   $.post('/users/register', {email: email, password: password})
-  .success(function(data) {
+  .success(function() {
     location.href = '/login';
   })
   .fail(function(err) {
-    alert(err);
+    alert('Error.  Check console.');
+    console.log('err:', err);
   });
 }

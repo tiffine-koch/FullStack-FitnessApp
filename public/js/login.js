@@ -20,6 +20,7 @@ function loginUser(e) {
     console.log(data);
   })
   .fail(function(err) {
-    alert(err);
+    alert('Error.  Check console.');
+    console.log('err:', err);
   });
 }
