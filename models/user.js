@@ -5,10 +5,10 @@ var jwt = require('jwt-simple');
 var JWT_SECRET = process.env.JWT_SECRET;
 
 var userSchema = new mongoose.Schema({
-  uid: String,
-  pokemon: [{
-    name: String
-  }]
+  uid: {type: String},
+  name: {type: String},
+  date: {type: String},
+  location: {type: Number},
 });
 
 // instance method

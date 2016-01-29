@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= title
+
+  .container-fluid
+    #formEntry.row
+      form.form-inline
+        .form-group
+          label(for='input') Date
+          input#nameEntry.form-control(type='date', placeholder='', value='', required='')
+        .form-group
+        label.amount(for='input') Mileage
+        input#mileEntry.form-control(type='number', placeholder='Enter Mileage', value='', step='0.01', required='')
+        .form-group
+          label(for='input') Location
+          input#locEntry.form-control(type='name', placeholder='Enter Description', value='')
+
+    button#newEntry.btn.btn-danger Add New Run 
+
+block scripts  
+  script(src='js/info.js')
