@@ -6,6 +6,7 @@
     "node": "4.2.6"
   },
   "scripts": {
+    "setup": "rm -rf node_modules public/lib && npm i && bower i",
     "start": "node ./bin/www",
     "postinstall": "bower i"
   },
