@@ -1,9 +1,6 @@
 body {
   background-image: url(/img/sunrise.jpg);
-  /*height: 700px;
-  width:700px;*/
   background-size: cover;
-  /*display: absolute;*/
   background-position: top right;
   background-position-x: 100%
   background-position-y: 0%;

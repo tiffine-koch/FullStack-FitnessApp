@@ -1,22 +1,72 @@
 extends layout
 
+block styles
+  link(rel='stylesheet', href='/css/info.css')
+  
 block content
   h1= title
+  .wide
+    .col-xs-5.line
+      hr
+    .col-xs-2.logo She Runs
+    .col-xs-5.line
+      hr
+    .text-center
+      h1 Your Run Log
+  #weather.weatherText Your Current Temp:        
+  #form.container-fluid    
+      #formEntry.row
+        form.form-inline
+          .form-group.col-md-3
+            label(for='input') Date
+            input#nameEntry.form-control(type='date', placeholder='', value='', required='')
+          .form-group.col-md-3
+          label.amount(for='input') Mileage
+          input#mileEntry.form-control(type='number', placeholder='Enter Mileage', value='', step='0.01', required='')
+          .form-group.col-md-3
+            label(for='input') Location
+            input#locEntry.form-control(type='name', placeholder='Enter Location', value='')
 
-  .container-fluid
-    #formEntry.row
-      form.form-inline
-        .form-group
-          label(for='input') Date
-          input#nameEntry.form-control(type='date', placeholder='', value='', required='')
-        .form-group
-        label.amount(for='input') Mileage
-        input#mileEntry.form-control(type='number', placeholder='Enter Mileage', value='', step='0.01', required='')
-        .form-group
-          label(for='input') Location
-          input#locEntry.form-control(type='name', placeholder='Enter Description', value='')
-
-    button#newEntry.btn.btn-danger Add New Run 
-
-block scripts  
+      button#newEntry.btn.btn-danger Add New Run 
+      .row
+        #goal.head.col-md-3.col-md-offset-3 Goal
+        #total.head.col-md-3.col-md-offset-3 Total
+  
+  table.table
+    thead
+      tr
+        th#titleD Date
+        th#titleM Mileage
+        th#titleL Location
+        th#titleW Weather
+        th#titleF Favorite
+        th#titleD Delete
+    
+    tbody#addLog
+      each user in arr
+        tr
+          td= user.date
+          td= user.mileage
+          td= user.location
+          td= user.weather
+          td
+            button#heart.btn.btn-default(type='button')
+              span.glyphicon.glyphicon-heart    
+          td
+            button#trash.btn.btn-default(type='button')
+        tr
+          td Jan 11, 2016
+          td 3.25 miles
+          td Fremont
+          td 56 F
+          td
+            button#heart.btn.btn-default(type='button')
+              span.glyphicon.glyphicon-heart    
+          td
+            button#trash.btn.btn-default(type='button')
+              span.glyphicon.glyphicon-trash    
+block scripts
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.js')
+  script(src='/lib/firebase/firebase.js')
   script(src='js/info.js')
+  script(src='js/weather.js')

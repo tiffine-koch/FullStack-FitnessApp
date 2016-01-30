@@ -6,9 +6,10 @@ var JWT_SECRET = process.env.JWT_SECRET;
 
 var userSchema = new mongoose.Schema({
   uid: {type: String},
-  name: {type: String},
   date: {type: String},
-  location: {type: Number},
+  mileage: {type: Number},
+  location: {type: String},
+  weather: {type: String}
 });
 
 // instance method
@@ -18,7 +19,6 @@ userSchema.methods.generateToken = function() {
     _id: this._id
   };
   var token = jwt.encode(payload, JWT_SECRET);
-
   return token;
 };
 
