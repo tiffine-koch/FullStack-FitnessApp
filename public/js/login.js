@@ -7,6 +7,7 @@ $(function() {
   $password = $('#password');
 
   $('form').on('submit', loginUser);
+  // $('#submitLogin').click(loginUser);
 });
 
 function loginUser(e) {

@@ -44,7 +44,7 @@ block content
     
     tbody#addLog
       each user in arr
-        tr
+        tr(data.id= user.uid)
           td= user.date
           td= user.mileage
           td= user.location

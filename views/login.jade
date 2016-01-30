@@ -11,7 +11,8 @@ block content
     .form-group
       label(for='password') Password
       input#password.form-control(type='password', placeholder='Password')
-    a.btn.btn-default(href='/info', role='button') Login
+    button.btn.btn-default(type='submit') Login
+    //- a.btn.btn-default(href='/info', role='button', id='submitLogin') Login
 
 block scripts
   script(src="/js/login.js")

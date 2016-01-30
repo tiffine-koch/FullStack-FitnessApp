@@ -20,7 +20,7 @@ router.get('/', function(req, res, next) {
 // router.get('/', function(req, res, next) {
 //   res.render('info', {user: user});
 // });
-
+//
 // router.get('/', function(req, res) {
 //   User.findById(req.body.user, function(err, user) {
 //     res.status(err ? 400 : 200).send(err || user);

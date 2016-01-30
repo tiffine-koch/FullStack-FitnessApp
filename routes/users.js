@@ -20,6 +20,7 @@ router.post('/register', function(req, res, next) {
 });
 
 router.post('/login', function(req, res, next) {
+  console.log('login req.body:', req.body);
   ref.authWithPassword(req.body, function(err, authData) {
     if(err) return res.status(400).send(err);
     User.findOne({uid: authData.uid}, function(err, user) {
@@ -30,6 +31,7 @@ router.post('/login', function(req, res, next) {
 });
 
 router.get('/info', authMiddleware, function(req, res) {
+// router.get('/profile', function(req, res) {
   //// logged in,   req.user
   User.findById(req.user._id, function(err, user) {
     res.send(user);

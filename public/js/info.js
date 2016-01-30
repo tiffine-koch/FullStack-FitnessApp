@@ -27,7 +27,7 @@ var mileage = $('#mileEntry').val();
 var location = $('#locEntry').val();
 var weather = $('#weather p').text();
 console.log($('#weather p').text());
-console.log(name, mileage, location, weather);
+console.log(date, mileage, location, weather);
 
 var user = {date: date, mileage: mileage, location: location, weather: weather};
   console.log(logEntry);
